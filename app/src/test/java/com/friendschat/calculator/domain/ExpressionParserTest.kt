@@ -27,7 +27,7 @@ class ExpressionParserTest {
             ExpressionPart.Number(3.0),
             ExpressionPart.Op(Operation.MULTIPLY),
             ExpressionPart.Number(4.0),
-            ExpressionPart.Op(Operation.DEVIDE),
+            ExpressionPart.Op(Operation.DIVIDE),
             ExpressionPart.Number(3.0)
         )
 
@@ -35,7 +35,7 @@ class ExpressionParserTest {
     }
 
     @Test
-    fun `Expression with parenthesis is properly parced` () {
+    fun `Expression with parenthesis is properly parced`() {
         parser = ExpressionParser("4x(7+3)")
 
         val actual = parser.parse()
