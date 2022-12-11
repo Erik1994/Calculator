@@ -1,0 +1,14 @@
+package com.friendschat.calculator.util
+
+import com.friendschat.calculator.domain.Operation
+
+sealed interface ExpressionPart {
+    data class Number(val number: Double): ExpressionPart
+    data class Op(val operation: Operation): ExpressionPart
+    data class Parentheses(val type: ParenthesesType): ExpressionPart
+}
+
+sealed interface ParenthesesType{
+    object Opening: ParenthesesType
+    object Closing: ParenthesesType
+}
