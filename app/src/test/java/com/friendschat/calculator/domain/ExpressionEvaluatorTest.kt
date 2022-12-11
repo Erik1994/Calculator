@@ -31,6 +31,25 @@ class ExpressionEvaluatorTest {
     }
 
     @Test
+    fun `Expression with decimals properly evaluated`() {
+        evaluator = ExpressionEvaluator(
+            listOf(
+                ExpressionPart.Number(4.5),
+                ExpressionPart.Op(Operation.ADD),
+                ExpressionPart.Number(5.5),
+                ExpressionPart.Op(Operation.SUBTRACT),
+                ExpressionPart.Number(3.5),
+                ExpressionPart.Op(Operation.MULTIPLY),
+                ExpressionPart.Number(5.5),
+                ExpressionPart.Op(Operation.DIVIDE),
+                ExpressionPart.Number(3.5),
+            )
+        )
+
+        assertThat(evaluator.evaluate()).isEqualTo(4.5)
+    }
+
+    @Test
     fun `Simple equation with parentheses properly evaluated`() {
         evaluator = ExpressionEvaluator(
             listOf(
