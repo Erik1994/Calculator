@@ -4,7 +4,7 @@ enum class Operation(val symbol: Char) {
     ADD('+'),
     SUBTRACT('-'),
     MULTIPLY('x'),
-    DEVIDE('/'),
+    DIVIDE('/'),
     PERCENT('%');
 
     companion object {
