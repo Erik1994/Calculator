@@ -3,6 +3,7 @@ package com.friendschat.calculator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.friendschat.calculator.presentation.CalculatorScreen
 import com.friendschat.calculator.ui.theme.CalculatorTheme
 
 class MainActivity : ComponentActivity() {
@@ -10,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CalculatorTheme {
-
+                CalculatorScreen()
             }
         }
     }
